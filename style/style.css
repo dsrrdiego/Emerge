@@ -1,0 +1,539 @@
+html{
+    font-family: 'Open Sans', sans-serif, monospace;
+    color: white;;
+}
+.espera{
+    cursor: progress;
+}
+body{
+    background-image: url(../images/otros/fondo.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* heder y menu*/
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    font-size: large;
+    background-color:#00000099;
+}
+
+.logo{
+    height: 70px;
+    margin:2px 20px 2px 20px;
+}
+
+header h1{
+    color:whitesmoke;
+    padding-right: 10%;
+}
+
+#botonMenu img{
+    width: 50px;
+}
+
+#botonMenu{
+    padding: 0%;
+    background-color:transparent;
+    border-style: none;
+    cursor:pointer;
+}
+
+.mostrarMenu{
+    display:block;
+}
+
+nav a{
+    background-color: inherit;
+    color: inherit;
+    border-style: none;
+    text-decoration: overline 4px;
+    font-size: larger;
+}
+
+nav li{
+    margin:6%;
+    list-style: none;
+}
+
+nav li:hover, .activa{
+    color: #ccff00;
+}
+
+footer{
+    text-align: right;
+    padding-bottom: 5%;
+}
+
+#barra{
+    background-color: #9bb82879;
+    position:fixed  ;
+    top:97.5%;
+    left:0%;
+    height: 4%;
+    width: 100%;
+    color: #0f0f0f;
+}
+#barraTexto{
+    position: fixed;
+}
+.barraAnimar{
+    animation: corredera 10s infinite;
+}
+    @keyframes corredera {
+    0%{
+        left:100%;
+    }
+    100%{
+        left:-20%;
+    }
+}
+
+
+/* noticias */
+section{
+    background-color: #00000099;
+    padding: 2%;
+    margin: 10px;
+    border-radius: 1%;
+}
+
+section h1{
+    color: #ccff00;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.noticia{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+    align-items: center;
+    animation: movimientoGeneral 2s;
+}
+
+.noticia img{
+    width: 50%;
+    border-radius: 5%;
+}
+
+h2{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+    font-style: oblique;
+}
+
+p{
+    text-align: justify;
+    padding: 5%;
+}
+
+
+/*      seccion artistas         */
+
+.flecs{    /* para aplicar a flex a algo*/
+    display:flex ;
+    flex-direction: column-reverse;
+}
+
+#discosDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.album{
+    width: 100%;
+    padding: 3px;
+    background-image: linear-gradient(to right,rgba(0,0,0,0.75),green,rgba(0,0,0,0.75));
+    background-size: 300%;
+    background-position-x: right;
+    margin-bottom: 1%;
+    margin-top:1%;
+    transition: background-position  0.2s ease;
+    animation: movimientoGeneral 1s;
+}
+
+.album:hover{
+    background-position-x: left;
+}
+
+.album img{
+    width:100%;
+}
+
+.album h3,.album h6{
+    text-align: center;
+}
+
+
+/* reproductor */
+#reproductor{
+    background-color: rgba(92, 136, 175, 0.5);
+    animation: movimientoGeneral 2s;
+}
+
+@keyframes movimientoGeneral{
+    0% {
+        width:0%;
+    }
+    45%{
+        width:90%;
+    }
+    70%{
+        width: 60%;
+    }
+    90%{
+        width:90%;
+    }
+    100%{
+        width:100%;
+    }
+}
+#tapa{
+     height:17rem;
+     padding: 1%;
+     background-repeat: repeat-x;
+     background-size: 300%;
+     
+    }
+
+.tapaAnimacion{
+    background-size: 300%;
+    animation: tapa infinite 5s;
+}
+
+@keyframes tapa{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 100%;
+    }
+}
+
+#tapa:hover{
+    margin: 1%;
+}
+
+#artista{
+    text-align: center;
+}
+
+#titulo{
+    color: black;
+}
+
+#controles{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botonReproductor{
+    height: 50px;
+    border-radius: 45%;
+    border-style: none;
+    background-image:linear-gradient(to right, rgb(3, 87, 21) 50%,rgba(106, 106, 209) 50%) ;
+    background-size: 200%;
+    background-position:right;
+    transition: background-position 0.3s ease;
+}
+
+.botonReproductor:hover{
+    background-position: left;
+}
+
+#listaDeReproduccion{
+    padding: 1%; 
+}
+
+#listaDeReproduccion li, .listaDeReproduccion{
+    list-style: none;
+    border-bottom: 1px solid black;
+    background-image:linear-gradient(to right,#ccff00 50%,rgba(92, 136, 175, 0)50%) ;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position:right;
+}
+
+#listaDeReproduccion li:hover{
+    background-position:left;
+    transition: background-position 0.3s ease;
+}
+
+.cancionClick{
+    background-color: #ccff00;
+}
+
+.cancionAnimacion{
+    animation: cancionSonando 2s infinite;
+}
+
+@keyframes cancionSonando{
+    0% {
+         background-color:  #ccff00 ;
+    }
+    50% {
+        background-color:inherit;
+    }
+    100% {
+        background-color: #ccff00;
+    }
+}
+
+
+/* pagina contactos */
+/* tabla */
+
+#seccion{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+#tablaDiv{
+    overflow-x:auto;
+}
+
+table{
+    padding: 1%;
+    width: 100%;
+}
+
+
+td{
+    padding: 3%;
+}
+
+
+table td:nth-child(1), table th:nth-child(1){
+    width: 9%;
+}
+
+table td:nth-child(2){
+    width: 20%;
+}
+
+table td:nth-child(3){
+    width: 15%;
+}
+
+table td:nth-child(4){
+    text-align: center;
+    width:13%;
+}
+
+table td:nth-child(5){
+    width: auto;
+}
+
+td:hover{
+    background-color: #494b4269;  
+}
+
+.resaltar{
+    background-color: rgb(216, 199, 199);
+    color:red;
+}
+
+th{
+    background-color: #494b4269;  
+}
+
+input{
+    max-width: 100%;
+    background-color: transparent;
+    color: rgb(167, 28, 28);
+}
+
+#controlesTabla{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#controlesTablaIn{
+    display:flex;
+    background-color: #0f0f0f;
+    border-radius: 5% 5% 0% 0%;
+    width:500px;
+}
+
+#btnsTabla{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+#filtrosTabla{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+#paginasTabla{
+    background-color: #0f0f0f;
+    border-radius: 0% 0% 15% 15% ;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:500px;
+}
+
+#paginasTabla button{
+    padding: 1%;
+}
+.cancel:hover{
+    background-color: #34a3a3;
+    cursor: not-allowed;
+}
+
+
+form{
+    background-color: rgba(53, 18, 18, 0.212);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.formLabels{
+    display: flex;
+}
+
+form input{
+    display: flex;
+    justify-content: center;
+}
+ 
+#captcha{
+    border-radius: 2%;
+    background-color: rgba(44, 54, 49, 0.37);
+    display: block;
+}
+
+#puzzle{
+    margin: 10%;
+}
+
+#puzzle h3{
+    background-color: #ccff00;
+    text-align: center;
+}
+
+/*puzzle */
+
+#seccion button,label {
+	background-color: #34a3a3;
+	color: white;
+	border-radius: .3rem;
+	padding:5%;
+	margin: 2% ;
+	min-width: 17%;
+	border-style: none;
+}
+
+#seccion button:hover {
+	background: #267e26;
+}
+
+#seccion .ausente{
+	background: inherit ;
+}
+
+#seccion .ausente:hover{
+	background-color:inherit;
+	cursor: default;
+}
+
+#btnOrdenar,#btnMasFacil{
+	width: 96%;
+	margin:2%;
+}
+
+
+
+.captchaFacil{
+    display:flex;
+    background-color: #3c304d;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ocultar{ 
+        display: none;
+}
+
+/* volver */
+a{ 
+    color: #5534a3;
+}
+
+
+/***********************************************************************/
+@media only screen and (min-width: 660px){ 
+    
+    #menu{
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    #botonMenu{
+        display:none;
+    }
+ 
+    .noticia{
+        flex-direction: row;
+
+    }
+    .noticia hr{
+        display:none;
+    }
+
+    .album{
+        width: 30%;
+        margin: 5px;
+        padding: 3px;
+        animation:movimientoGeneral2 2s;
+    }
+
+    @keyframes movimientoGeneral2{
+        0% {
+            width:25%;
+        }
+        80%{
+            width:28%;
+        }
+        100%{
+            width:30%;
+        }
+    }
+    
+    #reproductor{
+        width: 30%;
+        padding: 1%;
+    }
+
+    /*      seccion artistas   */      
+    .flecs{
+        flex-direction: row;
+    }
+
+    #discosDiv{
+        flex-direction: row;
+        width:80%;
+    }
+    
+    
+
+}
